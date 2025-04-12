@@ -25,12 +25,9 @@ jobs:
         run: |
           pytest test_app.py
 
-  approve-deploy:
+  deploy:
     needs: test
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://heroku/ayush.com
     steps:
       - name: Wait for manual approval
         run: echo "✅ Tests Passed. Ready for deployment."
